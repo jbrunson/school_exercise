@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Brunson HS Schedules</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Students</a></li>
+        <li class="active>"><a href="#">Faculty</a></li>
+      </ul>
+      <p class="navbar-text pull-right">guest_user | <a href="#">About Us</a></p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="btn-group btn-group-justified">
+      <% ('A'..'Z').each do |letter| %>
+        <%= link_to letter, students_path(letter: letter), class: 'btn btn-default' %>
+      <% end %>
+      <%= link_to 'All', students_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+
+  <div class="container">
+  
+    <%= yield %>
+
+  </div>
+
+</body>
+</html>

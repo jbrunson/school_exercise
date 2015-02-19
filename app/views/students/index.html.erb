@@ -1,0 +1,10 @@
+<div class="student-list">
+  <div class="container">
+    <div class="col-md-6">
+      <% @students.each do |student| %>
+        <div><%= student.id %>.  <%= link_to student.name, student, remote: true %></div>
+      <% end %>
+    </div>
+      <div class="current-student col-md-6"></div>
+  </div>
+</div>

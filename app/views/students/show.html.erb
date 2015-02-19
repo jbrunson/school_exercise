@@ -1,0 +1,16 @@
+<h1>This is the <%= @student.name %>'s weekly class schedule</h1>
+
+<div class="student-info">
+  <div class="container">
+    <ul class="list-group col-md-5">
+      <% @student.enrollments.each do |enrollment| %>
+
+      <li class="list-group-item">
+        <%= enrollment.course.period_time %>
+        |
+        <%= enrollment.course.name %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
